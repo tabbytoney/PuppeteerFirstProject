@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer')
 describe('Interacting with Inputs', () => {
     it('Type', async function() {
         const browser = await puppeteer.launch({
-            headless: false,  //headless false means it'll open a physical browser
+            headless: true,  //headless false means it'll open a physical browser
             sloMo: 1000,  //slows test down by this many miliseconds
             devtools: false
         })  //opens browser with dev tools open
