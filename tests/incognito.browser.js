@@ -6,7 +6,7 @@ describe('Device Emulation', () => {
 
     before(async function() {
         browser = await puppeteer.launch({
-            headless: false, //launches non incognito browser for some reason
+            headless: true, //launches non incognito browser for some reason
             devtools: false,
             slowMo: 10
         })
