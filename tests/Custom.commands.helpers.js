@@ -3,9 +3,8 @@ const expect = require('chai').expect
 
 
 //to get the functions from helpers.js:
-const { click } = require('../lib/helpers')
-const { getText } = require('..//lib/helpers')
-const { getCount } = require('..//lib/helpers')
+const { click, getText, getCount, shouldNotExist } = require('../lib/helpers')
+
 
 describe('Tests using helper functions from different file', () => {
     //best practices to define variables outside the it block
@@ -55,7 +54,14 @@ describe('Tests using helper functions from different file', () => {
         //await page.waitForSelector('#signin_button')
         //await page.click('#signin_button')
         await click(page, '#signin_button') //page, selector arguments defined in helpers.js
-        await page.waitForSelector('#signin_button', { hidden: true, timeout: 3000 })
 
+        // await page.waitfor(() => !document.querySelector('#signin_button'))
+        // await page.waitForSelector('#signin_button', { 
+        //     hidden: true,
+        //     timeout: 3000
+        // })
+        //the below is a function in helpers.js and replaces the above block
+        await page.waitFor(2000)
+        await shouldNotExist(page, '#signin_button')
     })
 })
