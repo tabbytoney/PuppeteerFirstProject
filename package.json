@@ -6,7 +6,8 @@
   "scripts": {
     "test:example": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/Custom.commands.helpers.js",
     "test:all": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests",
-    "test:device": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/device.emulation.js"
+    "test:device": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/device.emulation.js",
+    "test:e2e": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/e2e/*.test.js"
   },
   "keywords": [
     "Puppeteer",
